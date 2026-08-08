@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "QuadRando — Location de Quads à l'heure",
+  title: "Elta Quad — Location de Quads à l'heure",
   description:
-    "Location de quads à l'heure pour vos sorties et randonnées. Réservez votre créneau en ligne.",
+    "Location de quads à l'heure chez Elta Quad pour vos sorties et randonnées. Réservez votre créneau en ligne.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

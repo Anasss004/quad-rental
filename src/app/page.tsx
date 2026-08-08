@@ -1,11 +1,45 @@
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Fleet from "@/components/Fleet";
+import Pricing from "@/components/Pricing";
+import HowItWorks from "@/components/HowItWorks";
+import Gallery from "@/components/Gallery";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import MapSection from "@/components/MapSection";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import Footer from "@/components/Footer";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-4 text-center px-4">
-      <h1 className="text-4xl font-bold text-orange-700">🏍️ QuadRando</h1>
-      <p className="text-gray-500 max-w-md">
-        Site en construction — Phase 1 (scaffold + backend) terminée. Le contenu
-        arrive en Phase 2.
-      </p>
-    </main>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <Fleet />
+        <Pricing />
+        <HowItWorks />
+        <Gallery />
+        <Testimonials />
+        <FAQ />
+
+        {/* Le vrai formulaire de réservation arrive en Phase 3 (Feature 4) */}
+        <section
+          id="reservation"
+          className="py-20 bg-orange-50 text-center px-4"
+        >
+          <h2 className="text-3xl font-bold mb-2">Réserver un créneau</h2>
+          <p className="text-gray-500 max-w-md mx-auto">
+            Le formulaire de réservation connecté à la base de données arrive
+            à la Phase 3. En attendant, contactez-nous directement via
+            WhatsApp (bouton en bas à droite).
+          </p>
+        </section>
+
+        <MapSection />
+      </main>
+      <WhatsAppButton />
+      <Footer />
+    </>
   );
 }
