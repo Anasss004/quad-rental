@@ -24,7 +24,7 @@ export default function Pricing() {
   return (
     <section
       id="pricing"
-      className="relative overflow-hidden bg-[#F5F1E8] py-20 md:py-28"
+      className="relative overflow-hidden bg-[#F5F1E8] py-12 md:py-16"
     >
       {/* Ambient background */}
       <div
@@ -55,7 +55,7 @@ export default function Pricing() {
             </span>
           </div>
 
-          <h2 className="text-4xl font-black tracking-tight text-charcoal-950 md:text-5xl">
+          <h2 className="text-xl font-black tracking-tight text-charcoal-950 md:text-2xl">
             {t("pricing_title")}
           </h2>
 
@@ -89,19 +89,19 @@ export default function Pricing() {
                 </div>
               )}
 
-              <div className="p-7 md:p-9">
+              <div className="p-5 md:p-6">
 
                 {/* Icon + duration */}
                 <div className="flex items-center gap-4">
 
                   <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
+                    className={`flex h-9 w-9 items-center justify-center rounded-2xl ${
                       tier.popular
                         ? "bg-white/10 text-terracotta-400"
                         : "bg-terracotta-50 text-terracotta-500"
                     }`}
                   >
-                    <Clock size={22} />
+                    <Clock size={17} />
                   </div>
 
                   <div>
@@ -132,7 +132,7 @@ export default function Pricing() {
                 <div className="mt-8 flex items-baseline gap-1">
 
                   <span
-                    className={`text-5xl font-black tracking-tight ${
+                    className={`text-2xl font-black tracking-tight ${
                       tier.popular
                         ? "text-terracotta-400"
                         : "text-terracotta-600"
@@ -227,7 +227,7 @@ export default function Pricing() {
                 {/* CTA */}
                 <a
                   href="#reservation"
-                  className={`group/button mt-8 flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-bold transition-all duration-300 ${
+                  className={`group/button mt-8 flex w-full items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold transition-all duration-300 ${
                     tier.popular
                       ? "bg-terracotta-500 text-white hover:bg-terracotta-600 hover:shadow-lg hover:shadow-terracotta-500/20"
                       : "bg-charcoal-950 text-white hover:bg-terracotta-600 hover:shadow-lg"

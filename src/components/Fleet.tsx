@@ -24,7 +24,7 @@ export default function Fleet() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden bg-white py-24 md:py-32">
+    <section className="relative overflow-hidden bg-white py-12 md:py-16">
       {/* Ambient background */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -47,7 +47,7 @@ export default function Fleet() {
               </span>
             </div>
 
-            <h2 className="text-4xl font-black tracking-tight text-charcoal-950 md:text-5xl">
+            <h2 className="text-xl font-black tracking-tight text-charcoal-950 md:text-2xl">
               {t("fleet_title")}
             </h2>
 
@@ -66,7 +66,7 @@ export default function Fleet() {
               {/* =================================================
                   IMAGE
               ================================================== */}
-              <div className="relative min-h-[360px] overflow-hidden md:min-h-[540px]">
+              <div className="relative min-h-[260px] overflow-hidden md:min-h-[360px]">
 
                 {/* Image */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -92,13 +92,13 @@ export default function Fleet() {
                 </div>
 
                 {/* Bottom image content */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
 
                   <p className="mb-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
                     Disponible à la location
                   </p>
 
-                  <h3 className="text-3xl font-black text-white md:text-4xl">
+                  <h3 className="text-lg font-black text-white md:text-xl">
                     {quad.name}
                   </h3>
 
@@ -113,14 +113,14 @@ export default function Fleet() {
               {/* =================================================
                   CONTENT
               ================================================== */}
-              <div className="flex flex-col justify-center p-7 md:p-10">
+              <div className="flex flex-col justify-center p-5 md:p-6">
 
                 {/* Label */}
                 <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-terracotta-500">
                   L&apos;expérience
                 </p>
 
-                <h3 className="text-2xl font-black tracking-tight text-charcoal-950 md:text-3xl">
+                <h3 className="text-base font-black tracking-tight text-charcoal-950 md:text-lg">
                   Partez à l&apos;aventure
                 </h3>
 
@@ -191,7 +191,7 @@ export default function Fleet() {
                     </p>
 
                     <div className="flex items-baseline">
-                      <span className="text-3xl font-black text-terracotta-600">
+                      <span className="text-xl font-black text-terracotta-600">
                         {quad.price.split("/")[0]}
                       </span>
 
@@ -204,7 +204,7 @@ export default function Fleet() {
                   {/* CTA */}
                   <a
                     href="#reservation"
-                    className="group/button inline-flex items-center justify-center gap-2 rounded-xl bg-charcoal-950 px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-terracotta-600 hover:shadow-lg"
+                    className="group/button inline-flex items-center justify-center gap-2 rounded-xl bg-charcoal-950 px-4 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-terracotta-600 hover:shadow-lg"
                   >
                     Réserver
 

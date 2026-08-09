@@ -16,7 +16,7 @@ export default function MapSection() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#F5F1E8] py-20 md:py-28"
+      className="relative overflow-hidden bg-[#F5F1E8] py-12 md:py-16"
     >
       {/* Ambient background */}
       <div
@@ -50,7 +50,7 @@ export default function MapSection() {
             </span>
           </div>
 
-          <h2 className="text-4xl font-black tracking-tight text-charcoal-950 md:text-5xl">
+          <h2 className="text-xl font-black tracking-tight text-charcoal-950 md:text-2xl">
             {t("contact_title")}
           </h2>
 
@@ -89,7 +89,7 @@ export default function MapSection() {
                 Elta Quad
               </p>
 
-              <h3 className="mt-2 text-2xl font-black text-charcoal-950">
+              <h3 className="mt-2 text-lg font-black text-charcoal-950">
                 Parlons de votre aventure.
               </h3>
 
@@ -278,14 +278,14 @@ export default function MapSection() {
             className="
               group
               relative
-              min-h-[420px]
+              min-h-[280px]
               overflow-hidden
               rounded-[2rem]
               border border-charcoal-950/10
               bg-[#E5E0D6]
               shadow-xl
               shadow-charcoal-950/5
-              md:min-h-[520px]
+              md:min-h-[340px]
             "
           >
             {/* Google Maps */}

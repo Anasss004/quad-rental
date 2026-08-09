@@ -17,7 +17,7 @@ const WHATSAPP_MESSAGE = encodeURIComponent(
 
 export default function TransferSection() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden bg-white">
+    <section className="relative py-12 md:py-16 overflow-hidden bg-white">
       {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-terracotta-500/5 blur-3xl" />
@@ -37,7 +37,7 @@ export default function TransferSection() {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-charcoal-950">
+            <h2 className="text-xl md:text-2xl font-black tracking-tight text-charcoal-950">
               Commencez l&apos;aventure
               <span className="block text-terracotta-500">
                 dès votre départ.
@@ -56,7 +56,7 @@ export default function TransferSection() {
           <div className="group relative overflow-hidden rounded-[2rem] border border-charcoal-950/10 bg-white shadow-xl shadow-charcoal-950/5">
 
             {/* Image */}
-            <div className="relative h-[380px] md:h-[500px] overflow-hidden">
+            <div className="relative h-[260px] md:h-[340px] overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/transfer.jpg"
@@ -80,7 +80,7 @@ export default function TransferSection() {
               </div>
 
               {/* Image bottom */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
                 <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
 
                   <div>
@@ -88,7 +88,7 @@ export default function TransferSection() {
                       Véhicule privé
                     </p>
 
-                    <h3 className="text-3xl md:text-4xl font-black text-white">
+                    <h3 className="text-lg md:text-xl font-black text-white">
                       Jusqu&apos;à 7 personnes
                     </h3>
 
@@ -101,9 +101,9 @@ export default function TransferSection() {
                     </div>
                   </div>
 
-                  <div className="hidden md:flex items-center justify-center w-14 h-14 rounded-full bg-white/90 backdrop-blur border border-white text-charcoal-950 transition-all duration-300 group-hover:bg-terracotta-500 group-hover:text-white group-hover:border-terracotta-500">
+                  <div className="hidden md:flex items-center justify-center w-9 h-9 rounded-full bg-white/90 backdrop-blur border border-white text-charcoal-950 transition-all duration-300 group-hover:bg-terracotta-500 group-hover:text-white group-hover:border-terracotta-500">
                     <ArrowRight
-                      size={22}
+                      size={16}
                       className="transition-transform duration-300 group-hover:translate-x-1"
                     />
                   </div>
@@ -113,7 +113,7 @@ export default function TransferSection() {
             </div>
 
             {/* Bottom content */}
-            <div className="p-6 md:p-8">
+            <div className="p-4 md:p-5">
 
               {/* Departure title */}
               <div className="flex items-center gap-3 mb-6">
@@ -167,7 +167,7 @@ export default function TransferSection() {
 
                     </div>
 
-                    <span className="text-xl font-black text-terracotta-600">
+                    <span className="text-base font-black text-terracotta-600">
                       {route.price}
                     </span>
 
@@ -181,7 +181,7 @@ export default function TransferSection() {
                 href={`https://wa.me/${WHATSAPP_PHONE}?text=${WHATSAPP_MESSAGE}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/button flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#20bd5b] text-white font-bold px-6 py-4 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#25D366]/20"
+                className="group/button flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#20bd5b] text-white font-bold px-6 py-3 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#25D366]/20"
               >
                 <WhatsAppIcon size={19} />
 

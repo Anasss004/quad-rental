@@ -25,10 +25,10 @@ export default function HowItWorks() {
   const { t } = useLanguage();
   return (
     <section id="how-it-works" className="py-20 md:py-24 max-w-6xl mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-16 text-center">
+      <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight mb-8 text-center">
         {t("how_title")}
       </h2>
-      <div className="relative grid md:grid-cols-3 gap-12 md:gap-8 text-center">
+      <div className="relative grid md:grid-cols-3 gap-8 md:gap-8 text-center">
         {/* Connecting trail line between steps (desktop only) */}
         <div className="hidden md:block absolute top-7 left-[16.5%] right-[16.5%] h-px border-t-2 border-dashed border-terracotta-500/30" />
 
@@ -36,7 +36,7 @@ export default function HowItWorks() {
           const Icon = s.icon;
           return (
             <div key={s.title} className="relative">
-              <div className="relative z-10 w-14 h-14 mx-auto mb-5 rounded-full bg-white dark:bg-charcoal-900 border-2 border-terracotta-500 flex items-center justify-center">
+              <div className="relative z-10 w-12 h-12 mx-auto mb-5 rounded-full bg-white dark:bg-charcoal-900 border-2 border-terracotta-500 flex items-center justify-center">
                 <Icon size={22} className="text-terracotta-600 dark:text-terracotta-400" />
               </div>
               <span className="block text-xs font-bold uppercase tracking-wide text-terracotta-600 dark:text-terracotta-400 mb-1">

@@ -102,13 +102,13 @@ export default function Hero() {
           transition={{ delay: 0.22, duration: 0.7 }}
           className="
             max-w-4xl
-            text-5xl
+            text-2xl
             font-black
             leading-[0.98]
             tracking-[-0.04em]
             drop-shadow-2xl
-            md:text-7xl
-            lg:text-[5.5rem]
+            md:text-4xl
+            lg:text-[2.75rem]
           "
         >
           {t("hero_title1")}
@@ -132,7 +132,7 @@ export default function Hero() {
             leading-relaxed
             text-sand-100/90
             drop-shadow-lg
-            md:text-xl
+            md:text-base
           "
         >
           {t("hero_subtitle")}
@@ -156,7 +156,7 @@ export default function Hero() {
               gap-3
               rounded-xl
               bg-terracotta-500
-              px-7 py-4
+              px-5 py-2.5
               text-sm
               font-bold
               text-white
@@ -166,14 +166,14 @@ export default function Hero() {
               hover:bg-terracotta-600
               hover:shadow-2xl
               hover:shadow-terracotta-500/20
-              md:text-base
+              md:text-sm
             "
           >
             {t("hero_cta")}
 
             <span
               className="
-                flex h-7 w-7
+                flex h-5 w-5
                 items-center justify-center
                 rounded-lg
                 bg-white/15
@@ -199,7 +199,7 @@ export default function Hero() {
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
             className="
-              flex h-[56px] w-[56px]
+              flex h-[40px] w-[40px]
               items-center justify-center
               rounded-xl
               border border-white/25
@@ -211,7 +211,7 @@ export default function Hero() {
               hover:bg-white/20
             "
           >
-            <InstagramIcon size={21} />
+            <InstagramIcon size={16} />
           </motion.a>
         </motion.div>
       </motion.div>

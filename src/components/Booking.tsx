@@ -21,7 +21,7 @@ export default function Booking() {
   return (
 <section
   id="reservation"
-  className="relative overflow-hidden bg-white py-24 md:py-32 scroll-mt-24"
+  className="relative overflow-hidden bg-white py-12 md:py-16 scroll-mt-24"
 >      {/* Ambient background */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -46,7 +46,7 @@ export default function Booking() {
             </span>
           </div>
 
-          <h2 className="text-4xl font-black tracking-tight text-charcoal-950 md:text-5xl">
+          <h2 className="text-xl font-black tracking-tight text-charcoal-950 md:text-2xl">
             {t("booking_title")}
           </h2>
 
@@ -58,16 +58,16 @@ export default function Booking() {
        {/* =====================================================
     WHATSAPP QUICK BOOKING
 ===================================================== */}
-<div className="mb-16 rounded-[2rem] border border-charcoal-950/10 bg-sand-50/60 p-7 md:p-9">
-  <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+<div className="mb-10 rounded-[2rem] border border-charcoal-950/10 bg-sand-50/60 p-5 md:p-6">
+  <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
 
     {/* Content */}
     <div className="flex-1">
       <div className="flex items-start gap-5">
 
         {/* WhatsApp icon */}
-        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#25D366]/10">
-          <WhatsAppIcon size={27} />
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-[#25D366]/10">
+          <WhatsAppIcon size={18} />
         </div>
 
         {/* Text */}
@@ -76,7 +76,7 @@ export default function Booking() {
             Réservation rapide
           </p>
 
-          <h3 className="text-2xl font-black tracking-tight text-charcoal-950 md:text-3xl">
+          <h3 className="text-base font-black tracking-tight text-charcoal-950 md:text-lg">
             Réservez en quelques secondes
           </h3>
 
@@ -120,9 +120,9 @@ export default function Booking() {
         href={`https://wa.me/${WHATSAPP_PHONE}?text=${WHATSAPP_MESSAGE}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex w-full items-center justify-center gap-3 rounded-2xl bg-[#25D366] px-6 py-4.5 text-base font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#20bd5b] hover:shadow-xl hover:shadow-[#25D366]/20"
+        className="group flex w-full items-center justify-center gap-3 rounded-2xl bg-[#25D366] px-6 py-3 text-sm font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#20bd5b] hover:shadow-xl hover:shadow-[#25D366]/20"
       >
-        <WhatsAppIcon size={21} />
+        <WhatsAppIcon size={16} />
 
         <span>Réserver via WhatsApp</span>
 
@@ -161,13 +161,13 @@ export default function Booking() {
         {/* =====================================================
             BOOKING AREA
         ====================================================== */}
-        <div className="grid items-start gap-8 md:grid-cols-3">
+        <div className="grid items-start gap-6 md:grid-cols-3">
 
           {/* =================================================
               BOOKING FORM
           ================================================== */}
           <div className="md:col-span-2">
-            <div className="rounded-[2rem] border border-charcoal-950/10 bg-white p-6 shadow-sm md:p-8">
+            <div className="rounded-[2rem] border border-charcoal-950/10 bg-white p-4 shadow-sm md:p-5">
 
               {/* Form header */}
               <div className="mb-7">
@@ -175,7 +175,7 @@ export default function Booking() {
                   Votre aventure
                 </p>
 
-                <h3 className="mt-1 text-2xl font-black text-charcoal-950">
+                <h3 className="mt-1 text-lg font-black text-charcoal-950">
                   Choisissez votre créneau
                 </h3>
 

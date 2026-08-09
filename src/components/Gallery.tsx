@@ -13,7 +13,7 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="relative overflow-hidden bg-[#EDE7DB] py-20 md:py-28"
+      className="relative overflow-hidden bg-[#EDE7DB] py-12 md:py-16"
     >
       {/* Ambient background */}
       <div
@@ -38,7 +38,7 @@ export default function Gallery() {
             </span>
           </div>
 
-          <h2 className="text-4xl font-black tracking-tight text-charcoal-950 md:text-5xl">
+          <h2 className="text-xl font-black tracking-tight text-charcoal-950 md:text-2xl">
             Nos aventures
           </h2>
 
@@ -56,11 +56,11 @@ export default function Gallery() {
               className="
                 group
                 relative
-                h-72
+                h-48
                 overflow-hidden
                 rounded-2xl
                 bg-charcoal-900
-                md:h-80
+                md:h-56
               "
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}

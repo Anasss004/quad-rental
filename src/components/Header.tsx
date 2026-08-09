@@ -47,7 +47,7 @@ export default function Header() {
       }`}
     >
       {/* Header */}
-      <nav className="mx-auto grid h-20 w-full max-w-[1600px] grid-cols-1 items-center px-5 md:px-8 lg:grid-cols-[1fr_auto_1fr] lg:px-10 xl:px-14">
+      <nav className="mx-auto grid h-14 w-full max-w-[1600px] grid-cols-1 items-center px-5 md:px-8 lg:grid-cols-[1fr_auto_1fr] lg:px-10 xl:px-14">
 
         {/* =====================================================
             LOGO
@@ -63,20 +63,20 @@ export default function Header() {
             }`}
           >
             <span
-              className={`flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-300 ${
+              className={`flex h-8 w-8 items-center justify-center rounded-xl transition-all duration-300 ${
                 solid
                   ? "bg-terracotta-500 text-white"
                   : "bg-white/15 text-white backdrop-blur-md"
               } group-hover:bg-terracotta-500`}
             >
               <Compass
-                size={23}
+                size={17}
                 strokeWidth={2.2}
                 className="transition-transform duration-500 group-hover:rotate-45"
               />
             </span>
 
-            <span className="text-xl font-black tracking-tight">
+            <span className="text-sm font-black tracking-tight">
               Elta<span className="text-terracotta-500"> Quad</span>
             </span>
           </a>
@@ -98,7 +98,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`group relative rounded-xl px-4 py-3 text-[15px] font-semibold whitespace-nowrap transition-all duration-200 xl:px-5 ${
+                className={`group relative rounded-xl px-3 py-1.5 text-sm font-semibold whitespace-nowrap transition-all duration-200 xl:px-4 ${
                   solid
                     ? "text-charcoal-700 hover:bg-white hover:text-charcoal-950 dark:text-sand-200 dark:hover:bg-sand-50/10 dark:hover:text-sand-50"
                     : "text-white/90 hover:bg-white/10 hover:text-white"
@@ -131,7 +131,7 @@ export default function Header() {
           {/* Language */}
           <button
             onClick={() => setLang(lang === "fr" ? "en" : "fr")}
-            className={`flex h-11 min-w-[44px] items-center justify-center rounded-xl border px-3 text-xs font-bold transition-all duration-200 ${
+            className={`flex h-8 min-w-[44px] items-center justify-center rounded-xl border px-3 text-xs font-bold transition-all duration-200 ${
               solid
                 ? "border-charcoal-950/10 text-charcoal-700 hover:border-terracotta-500/30 hover:bg-terracotta-50 hover:text-terracotta-600 dark:border-sand-50/10 dark:text-sand-200 dark:hover:bg-sand-50/10"
                 : "border-white/20 text-white hover:border-white/40 hover:bg-white/10"
@@ -147,18 +147,18 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Elta Quad sur Instagram"
-            className={`flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-200 ${
+            className={`flex h-8 w-8 items-center justify-center rounded-xl transition-all duration-200 ${
               solid
                 ? "text-charcoal-700 hover:bg-terracotta-50 hover:text-terracotta-600 dark:text-sand-200 dark:hover:bg-sand-50/10"
                 : "text-white hover:bg-white/10"
             }`}
           >
-            <InstagramIcon size={20} />
+            <InstagramIcon size={16} />
           </a>
 
           {/* Separator */}
           <span
-            className={`mx-1 h-7 w-px ${
+            className={`mx-1 h-5 w-px ${
               solid
                 ? "bg-charcoal-950/10 dark:bg-sand-50/10"
                 : "bg-white/20"
@@ -167,7 +167,7 @@ export default function Header() {
 
           {/* Dark mode */}
           <div
-            className={`flex h-11 w-11 items-center justify-center rounded-xl ${
+            className={`flex h-8 w-8 items-center justify-center rounded-xl ${
               solid
                 ? "hover:bg-charcoal-950/5 dark:hover:bg-sand-50/10"
                 : "hover:bg-white/10"
@@ -181,7 +181,7 @@ export default function Header() {
             href="#reservation"
             className="
               group ml-2
-              flex h-12 items-center gap-2
+              flex h-9 items-center gap-2
               rounded-xl
               bg-terracotta-500
               px-6
@@ -211,13 +211,13 @@ export default function Header() {
           onClick={() => setOpen((value) => !value)}
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={open}
-          className={`absolute right-5 flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-200 lg:hidden ${
+          className={`absolute right-5 flex h-8 w-8 items-center justify-center rounded-xl transition-all duration-200 lg:hidden ${
             solid
               ? "bg-charcoal-950/5 text-charcoal-950 dark:bg-sand-50/10 dark:text-sand-50"
               : "bg-white/10 text-white"
           }`}
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={18} /> : <Menu size={18} />}
         </button>
       </nav>
 
@@ -249,8 +249,8 @@ export default function Header() {
                 className="
                   flex items-center justify-between
                   border-b border-charcoal-950/10
-                  py-4
-                  text-base font-semibold
+                  py-2.5
+                  text-sm font-semibold
                   text-charcoal-800
                   transition-colors
                   hover:text-terracotta-500
@@ -276,7 +276,7 @@ export default function Header() {
               onClick={() => setOpen(false)}
               className="
                 mt-5
-                flex h-12
+                flex h-9
                 items-center justify-between
                 rounded-xl
                 bg-terracotta-500
@@ -326,7 +326,7 @@ export default function Header() {
                   dark:hover:bg-sand-50/10
                 "
               >
-                <InstagramIcon size={20} />
+                <InstagramIcon size={16} />
               </a>
 
               <div className="ml-auto">
