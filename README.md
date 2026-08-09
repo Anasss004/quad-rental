@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Elta Quad — Location de Quads à l'heure
 
-## Getting Started
+Site de réservation en ligne pour une entreprise de location de quads : les
+clients réservent un créneau depuis le site, le propriétaire gère tout
+depuis un tableau de bord avec calendrier.
 
-First, run the development server:
+**Démo en ligne :** _ajoutez votre URL Vercel ici une fois déployé_
+
+## Fonctionnalités
+
+- Site public en français : présentation, flotte de quads, tarifs, galerie,
+  avis clients, FAQ, localisation.
+- Formulaire de réservation en temps réel (Supabase), avec affichage des
+  créneaux déjà demandés pour éviter les conflits.
+- Emails automatiques (propriétaire + client) à chaque nouvelle demande,
+  avec lien d'auto-annulation pour le client.
+- Tableau de bord `/admin` protégé par authentification : calendrier des
+  réservations, confirmation/annulation, gestion des jours de fermeture.
+- Sécurité : Row Level Security sur toutes les tables, protection anti-bot
+  sur le formulaire, vérification de signature sur le webhook email.
+- SEO : métadonnées Open Graph, données structurées LocalBusiness, sitemap.
+- Mode sombre, animations, design responsive.
+
+## Stack technique
+
+- [Next.js](https://nextjs.org) (App Router) + TypeScript
+- [Tailwind CSS v4](https://tailwindcss.com)
+- [Supabase](https://supabase.com) — base de données Postgres + authentification
+- [Resend](https://resend.com) — envoi d'emails transactionnels
+- [FullCalendar](https://fullcalendar.io) — calendrier admin
+- [Framer Motion](https://www.framer.com/motion/) — animations
+- [Vercel](https://vercel.com) — hébergement + analytics
+
+Coût total d'hébergement : **0€** (tiers gratuits de Supabase, Resend et Vercel).
+
+## Installation locale
 
 ```bash
+npm install
+cp .env.example .env.local   # puis remplissez vos propres clés
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Base de données (Supabase)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Exécutez, dans l'ordre, les fichiers SQL du dossier `supabase/` dans
+l'éditeur SQL de votre projet Supabase :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. `schema.sql` — table des réservations + sécurité (RLS)
+2. `phase3_availability.sql` — vue publique des créneaux (sans données perso)
+3. `phase4_admin.sql` — jours de fermeture
+4. `phase5_cancellation.sql` — fonction d'auto-annulation client
 
-## Learn More
+Voir aussi `SETUP_PHASE1.md` et `SETUP_PHASE5.md` pour les étapes détaillées
+(création de projet, webhook email, variables d'environnement).
 
-To learn more about Next.js, take a look at the following resources:
+## Structure du projet
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+  app/
+    page.tsx              → page d'accueil publique
+    admin/page.tsx         → tableau de bord propriétaire
+    annuler/[token]/       → page d'auto-annulation client
+    api/notify/route.ts    → webhook d'envoi d'emails
+  components/               → composants du site public
+  components/admin/         → composants du tableau de bord
+  lib/                      → client Supabase, formatage, hooks
+supabase/                   → schémas et migrations SQL
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Déploiement
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Le projet est prêt pour un déploiement gratuit sur Vercel (connecté à ce
+repo GitHub). Ajoutez les variables d'environnement de `.env.example` dans
+les paramètres du projet Vercel, puis déployez.

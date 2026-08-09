@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Plus } from "lucide-react";
 
 const faqs = [
   {
@@ -25,9 +26,9 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-20 bg-gray-50">
+    <section id="faq" className="py-20 md:py-24 bg-sand-100 dark:bg-charcoal-900">
       <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-12 text-center">
           Questions fréquentes
         </h2>
         <div className="space-y-3">
@@ -36,20 +37,25 @@ export default function FAQ() {
             return (
               <div
                 key={f.q}
-                className="border rounded-lg bg-white overflow-hidden"
+                className="border border-charcoal-950/10 dark:border-sand-50/10 rounded-lg bg-white dark:bg-charcoal-950 overflow-hidden"
               >
                 <button
-                  className="w-full text-left px-5 py-4 font-medium flex justify-between items-center"
+                  className="w-full text-left px-5 py-4 font-medium flex justify-between items-center gap-4"
                   onClick={() => setOpenIndex(open ? null : i)}
                   aria-expanded={open}
                 >
                   {f.q}
-                  <span className="text-orange-700 text-xl leading-none">
-                    {open ? "−" : "+"}
-                  </span>
+                  <Plus
+                    size={18}
+                    className={`shrink-0 text-terracotta-600 dark:text-terracotta-400 transition-transform duration-300 ${
+                      open ? "rotate-45" : ""
+                    }`}
+                  />
                 </button>
                 {open && (
-                  <div className="px-5 pb-4 text-sm text-gray-600">{f.a}</div>
+                  <div className="px-5 pb-4 text-sm text-charcoal-700/70 dark:text-sand-200/60">
+                    {f.a}
+                  </div>
                 )}
               </div>
             );

@@ -1,3 +1,6 @@
+import { Star } from "lucide-react";
+import Reveal from "./Reveal";
+
 const testimonials = [
   {
     name: "Sarah B.",
@@ -15,23 +18,28 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 max-w-6xl mx-auto px-4">
-      <h2 className="text-3xl font-bold mb-2 text-center">
+    <section className="py-20 md:py-24 max-w-6xl mx-auto px-4">
+      <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2 text-center">
         Ce qu&apos;en disent nos clients
       </h2>
-      <p className="text-center text-gray-500 mb-12">
+      <p className="text-center text-charcoal-700/70 dark:text-sand-200/60 mb-12 max-w-md mx-auto">
         Avis d&apos;exemple — remplacez par de vrais avis clients Elta Quad.
       </p>
-      <div className="grid md:grid-cols-3 gap-8">
-        {testimonials.map((t) => (
-          <div
-            key={t.name}
-            className="border rounded-xl p-6 shadow-sm bg-white"
-          >
-            <p className="text-yellow-500 mb-3">★★★★★</p>
-            <p className="text-gray-600 text-sm mb-4">&ldquo;{t.text}&rdquo;</p>
-            <p className="font-semibold text-sm">{t.name}</p>
-          </div>
+      <div className="grid md:grid-cols-3 gap-6">
+        {testimonials.map((t, i) => (
+          <Reveal key={t.name} delay={i * 0.1}>
+            <div className="rounded-xl p-6 bg-white dark:bg-charcoal-900 border border-charcoal-950/10 dark:border-sand-50/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <div className="flex gap-0.5 mb-3">
+                {Array.from({ length: 5 }).map((_, s) => (
+                  <Star key={s} size={14} className="fill-terracotta-500 text-terracotta-500" />
+                ))}
+              </div>
+              <p className="text-charcoal-700/80 dark:text-sand-100/80 text-sm mb-4 leading-relaxed">
+                &ldquo;{t.text}&rdquo;
+              </p>
+              <p className="font-semibold text-sm">{t.name}</p>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>

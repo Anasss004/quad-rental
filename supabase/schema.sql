@@ -56,3 +56,11 @@ create policy "Authenticated can delete reservations"
 -- Helpful index for the admin calendar query (ordered by date/time).
 create index if not exists reservations_res_date_idx
   on reservations (res_date, start_time);
+
+-- =====================================================================
+-- Added for the booking wizard (UI redesign): capture which quad model
+-- and which experience/package the client picked. Both optional so
+-- existing rows and the RLS policies above are unaffected.
+-- =====================================================================
+alter table reservations add column if not exists quad_type text;
+alter table reservations add column if not exists experience_type text;

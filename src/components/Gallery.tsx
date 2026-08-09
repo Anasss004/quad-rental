@@ -1,18 +1,20 @@
 const photos = [
-  "https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1508776108219-2ea3860f18bd?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1516934024742-b461ee5df3f1?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80",
+  "/images/quad.png",
+  "/images/quad.png",
+  "/images/quad.png",
+  "/images/quad.png",
+  "/images/quad.png",
+  "/images/quad.png",
 ];
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-20 bg-gray-50">
+    <section id="gallery" className="py-20 md:py-24 bg-sand-100 dark:bg-charcoal-900">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-2 text-center">Galerie</h2>
-        <p className="text-center text-gray-500 mb-12">
+        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2 text-center">
+          Galerie
+        </h2>
+        <p className="text-center text-charcoal-700/70 dark:text-sand-200/60 mb-12 max-w-md mx-auto">
           Photos d&apos;illustration — remplacez-les par vos propres photos
           d&apos;Elta Quad.
         </p>
@@ -24,7 +26,7 @@ export default function Gallery() {
               src={src}
               alt={`Sortie quad Elta Quad ${i + 1}`}
               loading="lazy"
-              className="w-full h-48 object-cover rounded-lg shadow-sm hover:opacity-90 transition"
+              className="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm transition-transform duration-500 ease-out hover:scale-[1.03]"
             />
           ))}
         </div>
