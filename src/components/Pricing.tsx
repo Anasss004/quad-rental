@@ -3,10 +3,8 @@
 import { useLanguage } from "@/lib/i18n";
 
 const tiers = [
-  { label: "1 heure", price: "40€", popular: false },
-  { label: "2 heures", price: "70€", popular: true },
-  { label: "Demi-journée", price: "120€", popular: false },
-  { label: "Journée complète", price: "200€", popular: false },
+  { label: "1 heure", price: "25€", popular: false },
+  { label: "2 heures", price: "35€", popular: true },
 ];
 
 export default function Pricing() {
@@ -20,7 +18,7 @@ export default function Pricing() {
         <p className="text-center text-charcoal-700/70 dark:text-sand-200/60 mb-12 max-w-md mx-auto">
           {t("pricing_subtitle")}
         </p>
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 gap-5 max-w-md mx-auto">
           {tiers.map((tier) => (
             <div
               key={tier.label}

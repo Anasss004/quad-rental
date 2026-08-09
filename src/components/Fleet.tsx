@@ -5,12 +5,12 @@ import Reveal from "./Reveal";
 import { useLanguage } from "@/lib/i18n";
 
 const quad = {
-  name: "Quad Solo 250",
+  name: "Quad 300CC",
   desc: "Notre modèle unique — robuste, facile à prendre en main, entretenu avant chaque sortie. Idéal pour découvrir le désert en toute confiance.",
-  cc: "250cc",
-  capacity: "1 personne",
+  cc: "300cc",
+  capacity: "2 personnes",
   transmission: "Automatique",
-  price: "40€/h",
+  price: "25€/h",
   image: "/images/quad.png",
 };
 
