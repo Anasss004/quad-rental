@@ -45,7 +45,10 @@ export default function BookingForm({
     const form = e.currentTarget;
     const fd = new FormData(form);
 
+    const reservationId = crypto.randomUUID();
+ 
     const payload = {
+      id: reservationId,
       client_name: String(fd.get("client_name") || "").trim(),
       phone: String(fd.get("phone") || "").trim(),
       email: String(fd.get("email") || "").trim() || null,
@@ -92,13 +95,9 @@ export default function BookingForm({
     }
 
     setSubmitting(true);
-    const { data, error } = await supabase
-      .from("reservations")
-      .insert([payload])
-      .select()
-      .single();
+    const { error } = await supabase.from("reservations").insert([payload]);
     setSubmitting(false);
-
+ 
     if (error) {
       console.error(error);
       setFeedback({
@@ -108,13 +107,13 @@ export default function BookingForm({
       });
       return;
     }
-
+ 
     setFeedback({
       type: "success",
       message:
         "Votre demande a bien été envoyée ! Nous vous confirmons votre rendez-vous rapidement par téléphone ou email.",
     });
-    setLastReservationId(data?.id ?? null);
+    setLastReservationId(reservationId);
     form.reset();
     onBooked();
   }
