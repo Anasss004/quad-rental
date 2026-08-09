@@ -1,14 +1,27 @@
 "use client";
 
-import { MapPin, Phone, Mail, Navigation, ArrowUpRight } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Navigation,
+  ArrowUpRight,
+  Compass,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n";
 
 const MAP_URL =
-  "https://www.google.com/maps?q=quad%20rental&output=embed";
+  "https://www.google.com/maps?q=31.696463,-8.209277&z=16&output=embed";
 
 const GOOGLE_MAPS_URL =
-  "https://www.google.com/maps/search/?api=1&query=quad%20rental";
+  "https://www.google.com/maps/search/?api=1&query=31.696463,-8.209277";
+
+const WAZE_URL =
+  "https://www.waze.com/ul?ll=31.696463%2C-8.209277&navigate=yes";
+
+const APPLE_MAPS_URL =
+  "https://maps.apple.com/?ll=31.696463,-8.209277&q=Elta%20Quad";
 
 export default function MapSection() {
   const { t } = useLanguage();
@@ -18,7 +31,10 @@ export default function MapSection() {
       id="contact"
       className="relative overflow-hidden bg-[#F5F1E8] py-12 md:py-16"
     >
-      {/* Ambient background */}
+      {/* =====================================================
+          AMBIENT BACKGROUND
+      ====================================================== */}
+
       <div
         className="pointer-events-none absolute -left-40 top-10 h-80 w-80 rounded-full bg-terracotta-400/8 blur-3xl"
         aria-hidden="true"
@@ -101,7 +117,10 @@ export default function MapSection() {
 
             <div className="space-y-3">
 
-              {/* Adresse */}
+              {/* =================================================
+                  ADDRESS
+              ================================================== */}
+
               <div
                 className="
                   group
@@ -133,13 +152,17 @@ export default function MapSection() {
                     Adresse
                   </p>
 
-                  <p className="mt-1 text-sm font-semibold text-charcoal-900">
-                    À compléter
+                  <p className="mt-1 text-sm font-semibold leading-relaxed text-charcoal-900">
+                    Route Souihla, Vers Autoroute Agadir,
+                    Marrakech 40120 Maroc
                   </p>
                 </div>
               </div>
 
-              {/* Téléphone */}
+              {/* =================================================
+                  PHONE
+              ================================================== */}
+
               <a
                 href="tel:+212664350232"
                 className="
@@ -189,9 +212,12 @@ export default function MapSection() {
                 />
               </a>
 
-              {/* Email */}
+              {/* =================================================
+                  EMAIL
+              ================================================== */}
+
               <a
-                href="mailto:contact@eltaquad.com"
+                href="mailto:touristransfers@gmail.com"
                 className="
                   group
                   flex items-center gap-4
@@ -223,7 +249,7 @@ export default function MapSection() {
                   </p>
 
                   <p className="mt-1 truncate text-sm font-semibold text-charcoal-900">
-                    contact@eltaquad.com
+                    touristransfers@gmail.com
                   </p>
                 </div>
 
@@ -240,35 +266,11 @@ export default function MapSection() {
               </a>
 
             </div>
-
-            {/* Map CTA */}
-            <a
-              href={GOOGLE_MAPS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                mt-5
-                flex w-full
-                items-center justify-center gap-2
-                rounded-xl
-                bg-charcoal-950
-                px-5 py-3.5
-                text-sm font-bold text-white
-                transition-all duration-300
-                hover:-translate-y-0.5
-                hover:bg-terracotta-600
-                hover:shadow-lg
-              "
-            >
-              <Navigation size={17} />
-              Ouvrir dans Google Maps
-              <ArrowUpRight size={15} />
-            </a>
           </motion.div>
 
           {/* =================================================
-              MAP
-          ====================================================== */}
+              INTERACTIVE MAP
+          ================================================== */}
 
           <motion.div
             initial={{ opacity: 0, x: 20, scale: 1.02 }}
@@ -278,17 +280,20 @@ export default function MapSection() {
             className="
               group
               relative
-              min-h-[280px]
+              min-h-[380px]
               overflow-hidden
               rounded-[2rem]
               border border-charcoal-950/10
               bg-[#E5E0D6]
               shadow-xl
-              shadow-charcoal-950/5
-              md:min-h-[340px]
+              shadow-charcoal-950/8
+              md:min-h-[440px]
             "
           >
-            {/* Google Maps */}
+            {/* =================================================
+                GOOGLE MAP
+            ================================================== */}
+
             <iframe
               title="Localisation Elta Quad"
               src={MAP_URL}
@@ -296,45 +301,43 @@ export default function MapSection() {
                 absolute inset-0
                 h-full w-full
                 border-0
-                grayscale-[15%]
-                contrast-[0.96]
-                transition-all duration-700
-                group-hover:grayscale-0
-                group-hover:contrast-100
               "
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
 
-            {/* Top gradient */}
+            {/* Soft top gradient */}
             <div
               className="
                 pointer-events-none
                 absolute inset-x-0 top-0
-                h-28
+                h-32
                 bg-gradient-to-b
-                from-black/15
+                from-black/20
                 to-transparent
               "
             />
 
-            {/* Location badge */}
+            {/* =================================================
+                LOCATION BADGE
+            ================================================== */}
+
             <div
               className="
-                absolute left-5 top-5
+                absolute left-4 top-4
                 flex items-center gap-3
                 rounded-2xl
-                border border-white/50
+                border border-white/60
                 bg-white/95
                 px-4 py-3
                 shadow-xl
                 backdrop-blur-md
-                md:left-6 md:top-6
+                md:left-5 md:top-5
               "
             >
               <div
                 className="
-                  flex h-10 w-10
+                  flex h-10 w-10 shrink-0
                   items-center justify-center
                   rounded-xl
                   bg-terracotta-500
@@ -356,66 +359,173 @@ export default function MapSection() {
               </div>
             </div>
 
-            {/* Bottom overlay */}
+            {/* =================================================
+                NAVIGATION PANEL
+            ================================================== */}
+
             <div
               className="
                 absolute
-                bottom-5 left-5 right-5
-                md:bottom-6 md:left-6 md:right-6
+                bottom-4 left-4 right-4
+                md:bottom-5 md:left-5 md:right-5
               "
             >
               <div
                 className="
-                  flex flex-col gap-3
-                  rounded-2xl
+                  rounded-[1.5rem]
                   border border-white/15
-                  bg-charcoal-950/85
+                  bg-charcoal-950/90
                   p-4
                   text-white
                   shadow-2xl
                   backdrop-blur-xl
-                  sm:flex-row
-                  sm:items-center
-                  sm:justify-between
                 "
               >
-                <div>
-                  <p className="text-sm font-bold">
-                    Retrouvez-nous à Marrakech
-                  </p>
+                {/* Panel heading */}
+                <div className="mb-3 flex items-center gap-3">
+                  <div
+                    className="
+                      flex h-9 w-9
+                      items-center justify-center
+                      rounded-xl
+                      bg-white/10
+                    "
+                  >
+                    <Compass size={17} />
+                  </div>
 
-                  <p className="mt-1 text-xs text-white/55">
-                    Adresse exacte à compléter
-                  </p>
+                  <div>
+                    <p className="text-sm font-bold">
+                      Comment souhaitez-vous nous rejoindre ?
+                    </p>
+
+                    <p className="mt-0.5 text-[11px] text-white/50">
+                      Choisissez votre application de navigation
+                    </p>
+                  </div>
                 </div>
 
-                <a
-                  href={GOOGLE_MAPS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    inline-flex
-                    items-center
-                    justify-center
-                    gap-2
-                    rounded-xl
-                    bg-terracotta-500
-                    px-4 py-3
-                    text-xs font-bold
-                    text-white
-                    transition-all duration-300
-                    hover:bg-terracotta-600
-                    hover:shadow-lg
-                  "
-                >
-                  Itinéraire
-                  <Navigation size={14} />
-                </a>
+                {/* =================================================
+                    NAVIGATION BUTTONS
+                ================================================== */}
+
+                <div className="grid grid-cols-3 gap-2">
+
+                  {/* Google Maps */}
+                  <a
+                    href={GOOGLE_MAPS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      group/nav
+                      flex items-center justify-center gap-2
+                      rounded-xl
+                      bg-white
+                      px-3 py-3
+                      text-xs font-bold
+                      text-charcoal-950
+                      transition-all duration-300
+                      hover:-translate-y-0.5
+                      hover:bg-terracotta-500
+                      hover:text-white
+                      hover:shadow-lg
+                    "
+                  >
+                    <MapPin
+                      size={15}
+                      className="
+                        transition-transform
+                        group-hover/nav:scale-110
+                      "
+                    />
+
+                    <span className="hidden sm:inline">
+                      Google Maps
+                    </span>
+
+                    <span className="sm:hidden">
+                      Maps
+                    </span>
+                  </a>
+
+                  {/* Waze */}
+                  <a
+                    href={WAZE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      group/nav
+                      flex items-center justify-center gap-2
+                      rounded-xl
+                      bg-white/10
+                      px-3 py-3
+                      text-xs font-bold
+                      text-white
+                      ring-1 ring-white/10
+                      transition-all duration-300
+                      hover:-translate-y-0.5
+                      hover:bg-white
+                      hover:text-charcoal-950
+                      hover:shadow-lg
+                    "
+                  >
+                    <Navigation
+                      size={15}
+                      className="
+                        transition-transform
+                        group-hover/nav:scale-110
+                      "
+                    />
+
+                    Waze
+                  </a>
+
+                  {/* Apple Maps */}
+                  <a
+                    href={APPLE_MAPS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      group/nav
+                      flex items-center justify-center gap-2
+                      rounded-xl
+                      bg-white/10
+                      px-3 py-3
+                      text-xs font-bold
+                      text-white
+                      ring-1 ring-white/10
+                      transition-all duration-300
+                      hover:-translate-y-0.5
+                      hover:bg-white
+                      hover:text-charcoal-950
+                      hover:shadow-lg
+                    "
+                  >
+                    <span
+                      className="
+                        text-sm font-black
+                        transition-transform
+                        group-hover/nav:scale-110
+                      "
+                    >
+                      
+                    </span>
+
+                    <span className="hidden sm:inline">
+                      Apple Plans
+                    </span>
+
+                    <span className="sm:hidden">
+                      Apple
+                    </span>
+                  </a>
+
+                </div>
               </div>
             </div>
           </motion.div>
-        </div>
 
+        </div>
       </div>
     </section>
   );
