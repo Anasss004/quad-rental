@@ -19,12 +19,9 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section className="py-20 md:py-24 max-w-6xl mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2 text-center">
+      <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-12 text-center">
         Ce qu&apos;en disent nos clients
       </h2>
-      <p className="text-center text-charcoal-700/70 dark:text-sand-200/60 mb-12 max-w-md mx-auto">
-        Avis d&apos;exemple — remplacez par de vrais avis clients Elta Quad.
-      </p>
       <div className="grid md:grid-cols-3 gap-6">
         {testimonials.map((t, i) => (
           <Reveal key={t.name} delay={i * 0.1}>

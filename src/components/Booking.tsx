@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
+
 import BookingForm from "./BookingForm";
 import AvailabilityList from "./AvailabilityList";
+import WhatsAppIcon from "./WhatsAppIcon";
 import { useLanguage } from "@/lib/i18n";
 
 const WHATSAPP_PHONE = "212664350232";
+
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Bonjour Elta Quad, je souhaite réserver un quad."
 );
@@ -16,41 +19,187 @@ export default function Booking() {
   const { t } = useLanguage();
 
   return (
-    <section id="reservation" className="py-20 md:py-24 bg-sand-50 dark:bg-charcoal-950">
-      <div className="max-w-5xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2 text-center">
-          {t("booking_title")}
-        </h2>
-        <p className="text-center text-charcoal-700/70 dark:text-sand-200/60 mb-10 max-w-md mx-auto">
-          {t("booking_subtitle")}
-        </p>
+<section
+  id="reservation"
+  className="relative overflow-hidden bg-white py-24 md:py-32 scroll-mt-24"
+>      {/* Ambient background */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden="true"
+      >
+        <div className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-terracotta-500/5 blur-3xl" />
 
-        <div className="max-w-xl mx-auto mb-10 text-center">
-          <a
-            href={`https://wa.me/${WHATSAPP_PHONE}?text=${WHATSAPP_MESSAGE}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto bg-[#25D366] hover:brightness-95 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition hover:-translate-y-0.5"
-          >
-            <MessageCircle size={20} fill="white" strokeWidth={0} />
-            Réserver via WhatsApp
-          </a>
-          <p className="text-xs text-charcoal-700/60 dark:text-sand-200/50 mt-2">
-            Réponse rapide — +212 664-350232
-          </p>
+        <div className="absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-[#25D366]/5 blur-3xl" />
+      </div>
 
-          <div className="flex items-center gap-3 my-8 text-xs uppercase tracking-widest text-charcoal-700/40 dark:text-sand-200/40">
-            <span className="flex-1 h-px bg-charcoal-950/10 dark:bg-sand-50/10" />
-            ou remplissez le formulaire
-            <span className="flex-1 h-px bg-charcoal-950/10 dark:bg-sand-50/10" />
+      <div className="relative mx-auto max-w-6xl px-6">
+
+        {/* =====================================================
+            HEADER
+        ====================================================== */}
+        <div className="mb-12 max-w-2xl md:mb-14">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-px w-10 bg-terracotta-500" />
+
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-terracotta-600">
+              Réservation
+            </span>
           </div>
+
+          <h2 className="text-4xl font-black tracking-tight text-charcoal-950 md:text-5xl">
+            {t("booking_title")}
+          </h2>
+
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-charcoal-600 md:text-lg">
+            {t("booking_subtitle")}
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 items-start">
+       {/* =====================================================
+    WHATSAPP QUICK BOOKING
+===================================================== */}
+<div className="mb-16 rounded-[2rem] border border-charcoal-950/10 bg-sand-50/60 p-7 md:p-9">
+  <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+
+    {/* Content */}
+    <div className="flex-1">
+      <div className="flex items-start gap-5">
+
+        {/* WhatsApp icon */}
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#25D366]/10">
+          <WhatsAppIcon size={27} />
+        </div>
+
+        {/* Text */}
+        <div>
+          <p className="mb-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#25D366]">
+            Réservation rapide
+          </p>
+
+          <h3 className="text-2xl font-black tracking-tight text-charcoal-950 md:text-3xl">
+            Réservez en quelques secondes
+          </h3>
+
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-charcoal-600">
+            Écrivez-nous sur WhatsApp pour vérifier la disponibilité
+            et confirmer votre réservation directement avec notre équipe.
+          </p>
+        </div>
+      </div>
+
+      {/* Benefits */}
+      <div className="mt-6 flex flex-wrap gap-x-7 gap-y-3 md:pl-[76px]">
+
+        <span className="flex items-center gap-2 text-sm font-medium text-charcoal-600">
+          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#25D366]/10">
+            <CheckCircle2
+              size={13}
+              className="text-[#25D366]"
+            />
+          </span>
+          Réponse rapide
+        </span>
+
+        <span className="flex items-center gap-2 text-sm font-medium text-charcoal-600">
+          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#25D366]/10">
+            <CheckCircle2
+              size={13}
+              className="text-[#25D366]"
+            />
+          </span>
+          Confirmation directe
+        </span>
+
+      </div>
+    </div>
+
+    {/* CTA */}
+    <div className="w-full shrink-0 md:w-[280px]">
+
+      <a
+        href={`https://wa.me/${WHATSAPP_PHONE}?text=${WHATSAPP_MESSAGE}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex w-full items-center justify-center gap-3 rounded-2xl bg-[#25D366] px-6 py-4.5 text-base font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#20bd5b] hover:shadow-xl hover:shadow-[#25D366]/20"
+      >
+        <WhatsAppIcon size={21} />
+
+        <span>Réserver via WhatsApp</span>
+
+        <ArrowRight
+          size={18}
+          className="transition-transform duration-300 group-hover:translate-x-1"
+        />
+      </a>
+
+      <a
+        href="tel:+212664350232"
+        className="mt-3 block text-center text-sm font-medium text-charcoal-500 transition-colors hover:text-[#25D366]"
+      >
+        ou appelez-nous · +212 664-350232
+      </a>
+
+    </div>
+  </div>
+</div>
+
+        {/* =====================================================
+            DIVIDER
+        ====================================================== */}
+        <div className="mb-10 flex items-center gap-4">
+          <span className="h-px flex-1 bg-charcoal-950/10" />
+
+          <span className="flex shrink-0 items-center gap-2 rounded-full border border-charcoal-950/10 bg-white px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-charcoal-400">
+            <MessageCircle size={13} />
+
+            Ou réservez en ligne
+          </span>
+
+          <span className="h-px flex-1 bg-charcoal-950/10" />
+        </div>
+
+        {/* =====================================================
+            BOOKING AREA
+        ====================================================== */}
+        <div className="grid items-start gap-8 md:grid-cols-3">
+
+          {/* =================================================
+              BOOKING FORM
+          ================================================== */}
           <div className="md:col-span-2">
-            <BookingForm onBooked={() => setRefreshKey((k) => k + 1)} />
+            <div className="rounded-[2rem] border border-charcoal-950/10 bg-white p-6 shadow-sm md:p-8">
+
+              {/* Form header */}
+              <div className="mb-7">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-terracotta-500">
+                  Votre aventure
+                </p>
+
+                <h3 className="mt-1 text-2xl font-black text-charcoal-950">
+                  Choisissez votre créneau
+                </h3>
+
+                <p className="mt-2 max-w-lg text-sm leading-relaxed text-charcoal-500">
+                  Remplissez les informations ci-dessous pour envoyer votre
+                  demande de réservation.
+                </p>
+              </div>
+
+              {/* Booking form */}
+              <BookingForm
+                onBooked={() => setRefreshKey((k) => k + 1)}
+              />
+
+            </div>
           </div>
-          <AvailabilityList refreshKey={refreshKey} />
+
+          {/* =================================================
+              AVAILABILITY
+          ================================================== */}
+          <div className="md:sticky md:top-24">
+            <AvailabilityList refreshKey={refreshKey} />
+          </div>
+
         </div>
       </div>
     </section>

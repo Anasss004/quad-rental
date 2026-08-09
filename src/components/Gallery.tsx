@@ -1,35 +1,88 @@
+"use client";
+
 const photos = [
   "/images/quad.png",
-  "/images/quad.png",
-  "/images/quad.png",
-  "/images/quad.png",
-  "/images/quad.png",
-  "/images/quad.png",
+  "/images/elta-quad-gallery-4.jpg",
+  "/images/elta-quad-gallery-2.jpg",
+  "/images/gallery4.png",
+  "/images/gallery6.png",
+  "/images/gallery8.png",
 ];
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-20 md:py-24 bg-sand-100 dark:bg-charcoal-900">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2 text-center">
-          Galerie
-        </h2>
-        <p className="text-center text-charcoal-700/70 dark:text-sand-200/60 mb-12 max-w-md mx-auto">
-          Photos d&apos;illustration — remplacez-les par vos propres photos
-          d&apos;Elta Quad.
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {photos.map((src, i) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              key={i}
-              src={src}
-              alt={`Sortie quad Elta Quad ${i + 1}`}
-              loading="lazy"
-              className="w-full h-64 md:h-80 object-cover rounded-lg shadow-sm transition-transform duration-500 ease-out hover:scale-[1.03]"
-            />
-          ))}
+    <section
+      id="gallery"
+      className="relative overflow-hidden bg-[#EDE7DB] py-20 md:py-28"
+    >
+      {/* Ambient background */}
+      <div
+        className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-terracotta-400/10 blur-3xl"
+        aria-hidden="true"
+      />
+
+      <div
+        className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-terracotta-300/10 blur-3xl"
+        aria-hidden="true"
+      />
+
+      <div className="relative mx-auto max-w-7xl px-5 md:px-8">
+
+        {/* Header */}
+        <div className="mb-10 md:mb-14">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-px w-10 bg-terracotta-500" />
+
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-terracotta-600">
+              Galerie
+            </span>
+          </div>
+
+          <h2 className="text-4xl font-black tracking-tight text-charcoal-950 md:text-5xl">
+            Nos aventures
+          </h2>
+
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-charcoal-600 md:text-lg">
+            Photos d&apos;illustration de nos sorties en quad.
+          </p>
         </div>
+
+        {/* Photos */}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+
+          {photos.map((src, i) => (
+            <div
+              key={src}
+              className="
+                group
+                relative
+                h-72
+                overflow-hidden
+                rounded-2xl
+                bg-charcoal-900
+                md:h-80
+              "
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={src}
+                alt={`Sortie quad Elta Quad ${i + 1}`}
+                loading="lazy"
+                className="
+                  h-full
+                  w-full
+                  object-cover
+                  transition-transform
+                  duration-700
+                  ease-out
+                  group-hover:scale-105
+                "
+              />
+            </div>
+          ))}
+
+        </div>
+
       </div>
     </section>
   );

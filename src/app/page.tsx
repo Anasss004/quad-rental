@@ -21,11 +21,12 @@ export default function Home() {
         <Fleet />
         <Pricing />
         <TransferSection />
+        <Booking />
+
         <HowItWorks />
         <Gallery />
         <Testimonials />
         <FAQ />
-        <Booking />
         <MapSection />
       </main>
       <WhatsAppButton />

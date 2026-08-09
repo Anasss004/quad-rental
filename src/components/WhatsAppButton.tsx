@@ -1,21 +1,34 @@
-import { MessageCircle } from "lucide-react";
+import InstagramIcon from "./InstagramIcon";
+import WhatsAppIcon from "./WhatsAppIcon";
+
+const INSTAGRAM_URL = "https://www.instagram.com/elta_quad/";
 
 export default function WhatsAppButton() {
-  // Remplacez le numéro ci-dessous par le vôtre, format international sans "+" ni espaces.
-  const phone = "33600000000";
+  const phone = "212664350232";
   const message = encodeURIComponent(
     "Bonjour Elta Quad, je souhaite avoir des informations sur une réservation."
   );
 
   return (
-    <a
-      href={`https://wa.me/${phone}?text=${message}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Contacter Elta Quad sur WhatsApp"
-      className="fixed bottom-5 right-5 z-40 bg-[#25D366] hover:brightness-95 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition hover:scale-105"
-    >
-      <MessageCircle size={22} fill="white" strokeWidth={0} />
-    </a>
+    <div className="fixed bottom-5 right-5 z-40 flex flex-col items-center gap-3">
+      <a
+        href={INSTAGRAM_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Elta Quad sur Instagram"
+        className="bg-gradient-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:brightness-95 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition hover:scale-105"
+      >
+        <InstagramIcon size={22} />
+      </a>
+      <a
+        href={`https://wa.me/${phone}?text=${message}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contacter Elta Quad sur WhatsApp"
+        className="bg-[#25D366] hover:brightness-95 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition hover:scale-105"
+      >
+        <WhatsAppIcon size={24} />
+      </a>
+    </div>
   );
 }
