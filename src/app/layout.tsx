@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?auto=format&fit=crop&w=1200&q=80",
+        url: `${siteUrl}/images/quad1.png`,
         width: 1200,
         height: 630,
         alt: "Elta Quad — Location de quads",
@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     title: "Elta Quad — Location de Quads à l'heure",
     description:
       "Location de quads à l'heure chez Elta Quad pour vos sorties et randonnées.",
+    images: [`${siteUrl}/images/quad1.png`],
   },
 };
 
