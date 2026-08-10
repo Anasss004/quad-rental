@@ -6,7 +6,7 @@ const INSTAGRAM_URL = "https://www.instagram.com/elta_quad/";
 export default function WhatsAppButton() {
   const phone = "212664350232";
   const message = encodeURIComponent(
-    "Bonjour Elta Quad, je souhaite avoir des informations sur une réservation."
+    "Bonjour 👋🏻 Je souhaite réserver une excursion en quad à Souihla 🏍️🌴"
   );
 
   return (
